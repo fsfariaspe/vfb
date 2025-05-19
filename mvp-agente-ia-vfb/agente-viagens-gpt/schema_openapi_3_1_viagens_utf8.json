@@ -100,8 +100,8 @@
   },
   "servers": [
     {
-      "url": "https://6355-179-152-229-224.ngrok-free.app",
-      "description": "Substitua pela URL do seu endpoint backend ou ngrok"
+      "url": "https://deploy-backend-notion-gpt.onrender.com",
+      "description": "URL do endpoint apontando para o Render"
     }
   ]
 }
