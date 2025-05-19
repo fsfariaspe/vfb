@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: backend-notion-gpt
+    env: python
+    plan: free
+    buildCommand: ""
+    startCommand: gunicorn backend_notion_viagens:app
+    envVars:
+      - key: NOTION_API_KEY
+        value: "substitua_por_seu_token"
+      - key: NOTION_DATABASE_ID
+        value: "substitua_pelo_id_da_database"

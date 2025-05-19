@@ -1,0 +1,107 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Enviar dados para a Tabela de Solicitação de Viagem no Notion",
+    "version": "1.0.1"
+  },
+  "paths": {
+    "/notion/enviar-solicitacao": {
+      "post": {
+        "summary": "Enviar dados preenchidos do cliente para o Notion",
+        "operationId": "enviarSolicitacao",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "nome_cliente": {
+                    "type": "string"
+                  },
+                  "status": {
+                    "type": "string",
+                    "enum": [
+                      "Aguardando Pesquisa",
+                      "Em Pesquisa",
+                      "Aguardando Aprovação",
+                      "Respondido",
+                      "Fechado"
+                    ]
+                  },
+                  "tipo_viagem": {
+                    "type": "string",
+                    "enum": [
+                      "Passagem Aérea",
+                      "Cruzeiro",
+                      "Pacote Completo",
+                      "Outro"
+                    ]
+                  },
+                  "origem_destino": {
+                    "type": "string"
+                  },
+                  "data_ida": {
+                    "type": "string",
+                    "format": "date",
+                    "description": "Data de ida da viagem no formato AAAA-MM-DD. Exemplo: 2025-07-05."
+                  },
+                  "data_volta": {
+                    "type": "string",
+                    "format": "date",
+                    "description": "Data de volta da viagem no formato AAAA-MM-DD. Exemplo: 2025-07-05."
+                  },
+                  "qtd_passageiros": {
+                    "type": "string",
+                    "description": "Quantidade de passageiros no formato livre. Ex: '2 adultos, 1 criança'"
+                  },
+                  "preferencias": {
+                    "type": "string"
+                  },
+                  "perfil_viagem": {
+                    "type": "string",
+                    "enum": [
+                      "Econômico",
+                      "Moderado",
+                      "Premium"
+                    ]
+                  },
+                  "veio_instagram": {
+                    "type": "boolean"
+                  },
+                  "print_enviado_url": {
+                    "type": "string",
+                    "format": "uri"
+                  },
+                  "orcamento_validado": {
+                    "type": "string"
+                  },
+                  "observacoes": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "nome_cliente",
+                  "tipo_viagem",
+                  "origem_destino",
+                  "data_ida"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Solicitação registrada com sucesso no Notion"
+          }
+        }
+      }
+    }
+  },
+  "servers": [
+    {
+      "url": "https://6355-179-152-229-224.ngrok-free.app",
+      "description": "Substitua pela URL do seu endpoint backend ou ngrok"
+    }
+  ]
+}
