@@ -100,7 +100,7 @@
   },
   "servers": [
     {
-      "url": "https://deploy-backend-notion-gpt.onrender.com",
+      "url": "https://backend-notion-whatsapp.onrender.com",
       "description": "URL do endpoint apontando para o Render"
     }
   ]
