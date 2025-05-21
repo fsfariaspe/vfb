@@ -11,6 +11,7 @@ client = Client(TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN)
 
 def enviar_mensagem_whatsapp(nome_cliente=""):
     try:
+        print(">>> Enviando mensagem via Twilio...")
         message = client.messages.create(
             from_=TWILIO_WHATSAPP_NUMBER,
             body=f"Olá {nome_cliente or 'cliente'}, sua solicitação foi recebida com sucesso! Em breve entraremos em contato com sua proposta. ✈️",
