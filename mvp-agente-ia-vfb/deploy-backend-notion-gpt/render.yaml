@@ -10,3 +10,9 @@ services:
         value: "substitua_por_seu_token"
       - key: NOTION_DATABASE_ID
         value: "substitua_pelo_id_da_database"
+      - key: TWILIO_ACCOUNT_SID
+        value: "substitua_pelo_seu_sid"
+      - key: TWILIO_AUTH_TOKEN
+        value: "substitua_pelo_seu_auth_token"
+      - key: TWILIO_DESTINO
+        value: "whatsapp:+5581XXXXXXXXX"
