@@ -100,7 +100,7 @@
   },
   "servers": [
     {
-      "url": "https://backend-notion-whatsapp.onrender.com",
+      "url": "https://backend-notion-whatsapp.onrender.com/notion/enviar-solicitacao",
       "description": "URL do endpoint apontando para o Render"
     }
   ]
