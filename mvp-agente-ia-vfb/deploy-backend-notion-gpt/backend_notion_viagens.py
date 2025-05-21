@@ -1,3 +1,4 @@
+from send_whatsapp import enviar_mensagem_whatsapp
 from flask import Flask, request, jsonify
 import requests
 
@@ -71,6 +72,10 @@ def create_notion_page(data):
     try:
         response = requests.post(NOTION_API_URL, headers=HEADERS, json=payload)
         print("NOTION RESPONSE:", response.status_code, response.text)
+        
+        # ✅ Envia mensagem no WhatsApp após salvar no Notion
+        enviar_mensagem_whatsapp(data.get("nome_cliente", ""))
+        
         return response.status_code, response.json()
     except Exception as e:
         print("ERRO AO ENVIAR PARA O NOTION:", e)
