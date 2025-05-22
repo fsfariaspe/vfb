@@ -78,13 +78,18 @@
                   },
                   "observacoes": {
                     "type": "string"
+                  },
+                  "whatsapp_cliente": {
+                    "type": "string",
+                    "description": "Número do cliente em formato internacional. Ex: 5581999999999"
                   }
                 },
                 "required": [
                   "nome_cliente",
                   "tipo_viagem",
                   "origem_destino",
-                  "data_ida"
+                  "data_ida",
+                  "whatsapp_cliente"
                 ]
               }
             }
